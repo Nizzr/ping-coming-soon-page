@@ -1,0 +1,224 @@
+/* CSS reset */
+:root {
+    --blue: hsl(223, 87%, 63%);
+
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html body {
+    overflow: hidden;
+    height: 100vh;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin: 1.5rem 0;
+    font-weight: 700;
+}
+
+h2 .dot {
+    color: var(--blue);
+}
+
+h1 {
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+
+h1 .text {
+    font-weight: 300;
+    color: var(--gray);
+}
+
+h3 {
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+form {
+    margin-bottom: 2em;
+}
+
+input {
+    padding: 0 2rem;
+    outline: none;
+    border-radius: 50px;
+    height: 3rem;
+    width: 24rem;
+    border: 1px solid var(--pale-blue);
+}
+
+/* Email valdation */
+
+#text {
+    font-size: 10px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--light-red);
+    position: absolute;
+    top: 15rem;
+    left: 32rem;
+}
+
+button {
+    height: 3rem;
+    width: 10rem;
+    margin-left: 1em;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--blue);
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: .5em .5em .8em var(--pale-blue);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.illustration {
+    width: 35rem;
+}
+
+.copyright {
+    color: var(--gray);
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+/* ----ICONS---- */
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0 1rem 0;
+}
+
+.facebook,
+.twitter,
+.instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .5em;
+    height: 25px;
+    width: 25px;
+    border: 1px solid var(--pale-blue);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fab {
+    color: var(--blue);
+    font-size: 15px;
+    padding-bottom: 5px;
+
+}
+
+/* The icons on hover */
+.facebook:hover,
+.twitter:hover,
+.instagram:hover {
+    background-color: var(--blue);
+    width: 27px;
+    height: 27px;
+}
+
+.fab:hover {
+    font-size: 17px;
+    color: white;
+    z-index: 2;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 40px;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+    h1 {}
+
+    form {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    input,
+    button {
+        width: 20rem;
+        margin: 0;
+    }
+
+    .illustration {
+        width: 25rem;
+    }
+}
+
+
+footer {
+    width: 100vw;
+    height: 2rem;
+    position: absolute;
+    bottom: 0;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+}
+
+footer .attribution {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+footer .attribution a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--light-red);
+}
+
+/* Attribution animation */
+
+footer {
+    position: absolute;
+    transform: translateY(100%);
+    transition: .5s;
+}
+
+footer::before {
+    content: "";
+    opacity: 0;
+    height: 4rem;
+    width: 100%;
+    position: absolute;
+    bottom: 100%;
+}
+
+footer:hover {
+    transform: translateY(0);
+}
