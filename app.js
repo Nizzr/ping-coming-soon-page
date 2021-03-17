@@ -1,18 +1,38 @@
+const btn = document.querySelector("#button")
+btn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  console.log(validation());
+    switch(validation()) {
+        case "valid":
+            location.reload();
+            break;
+        case "invalid":
+            text.innerHTML = "Please provide a valid email adress";
+            break;
+        case "empty":
+            text.innerHTML = "Whoops! It looks like you forgot to add your email";
+            break;
+    }
+    
+})
+
 function validation() {
-    var form = document.getElementById("form");
-    var email = document.getElementById("email").value;
-    var text = document.getElementById("text");
-    var pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    const form = document.querySelector("#form");
+    const email = document.querySelector("#email").value;
+    const text = document.querySelector("#text");
+    const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    
     if (email.match(pattern)) {
-        form.classList.add("valid");
-        form.classList.remove("invalid");
         text.innerHTML = "";
         document.getElementById("email").style.borderColor = "hsl(223, 100%, 88%)";
-    }
-    else {
-        form.classList.add("invalid");
-        form.classList.remove("valid");
-        text.innerHTML = "Please provide a valid email adress";
+        return "valid";
+    } else if(email==="") {
         document.getElementById("email").style.borderColor = "hsl(354, 100%, 66%)";
+        return "empty";
     }
-}
+    
+    else {
+        document.getElementById("email").style.borderColor = "hsl(354, 100%, 66%)";
+        return "invalid";
+    }
+} 

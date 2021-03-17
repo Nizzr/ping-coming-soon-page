@@ -78,7 +78,7 @@ input {
     left: 32rem;
 }
 
-button {
+#button {
     height: 3rem;
     width: 10rem;
     margin-left: 1em;
@@ -93,7 +93,7 @@ button {
     box-shadow: .5em .5em .8em var(--pale-blue);
 }
 
-button:hover {
+#button:hover {
     opacity: 0.9;
 }
 
@@ -133,7 +133,6 @@ button:hover {
 .fab {
     color: var(--blue);
     font-size: 15px;
-    padding-bottom: 5px;
 
 }
 
@@ -169,7 +168,7 @@ button:hover {
     }
 
     input,
-    button {
+    #button {
         width: 20rem;
         margin: 0;
     }
