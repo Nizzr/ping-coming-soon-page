@@ -22,7 +22,7 @@ html body {
     overflow: hidden;
     height: 100vh;
     font-family: 'Libre Franklin', sans-serif;
-    font-size: 20px;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +54,10 @@ h3 {
 }
 
 form {
-    margin-bottom: 2em;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 36rem;
 }
 
 input {
@@ -73,9 +76,8 @@ input {
     font-weight: 300;
     font-style: italic;
     color: var(--light-red);
-    position: absolute;
-    top: 15rem;
-    left: 32rem;
+    margin:1rem 0 0 0;
+
 }
 
 #button {
@@ -173,12 +175,13 @@ input {
 /* Mobile */
 
 @media only screen and (max-width: 600px) {
-    h1 {}
+    h1 {
+        font-size: 1.5em;
+    }
 
     form {
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 1em;
+        grid-template-rows: 1fr .5fr 1fr;
     }
 
     input,
@@ -190,6 +193,16 @@ input {
     .illustration {
         width: 25rem;
     }
+    /* Elements order */
+    
+    #text {order: 1}
+    input {order: 0;}
+    button {order: 2;}
+    #text {
+        margin: .6rem 0;
+        height: 1rem;
+    }
+
 }
 
 
